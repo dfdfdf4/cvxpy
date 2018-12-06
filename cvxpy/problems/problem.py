@@ -236,7 +236,7 @@ class Problem(u.Canonical):
         verbose : bool, optional
             Overrides the default of hiding solver output.
         gp : bool, optional
-            If True, then parses the problem as a disciplined geometric program
+            If True, parses the problem as a disciplined geometric program
             instead of a disciplined convex program.
         solver_specific_opts : dict, optional
             A dict of options that will be passed to the specific solver.
@@ -287,8 +287,8 @@ class Problem(u.Canonical):
 
         When a problem is solved, a chain of reductions, called a
         :class:`~cvxpy.reductions.solvers.solving_chain.SolvingChain`,
-        compiles it to some low-level representation that is compatible with the
-        targeted solver. This method returns that low-level representation.
+        compiles it to some low-level representation that is compatible with
+        the targeted solver. This method returns that low-level representation.
 
         For some solving chains, this low-level representation is a dictionary
         that contains exactly those arguments that were supplied to the solver;
@@ -470,12 +470,12 @@ class Problem(u.Canonical):
     def unpack(self, solution):
         """Updates the problem state given a Solution.
 
-        Updates problem.status, problem.value and value of
-        primal and dual variables.
+        Updates problem.status, problem.value and value of primal and dual
+        variables.
 
         Parameters
         __________
-        solution : Solution
+        solution : cvxpy.Solution
             A Solution object.
         """
         if solution.status in s.SOLUTION_PRESENT:
